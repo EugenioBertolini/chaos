@@ -46,10 +46,11 @@ e = 6
 tau = 4
 tp = 6
 
-ccm_long = pd.read_csv(f"ccm-long-{le}-E{e}-tau{tau}-tp{tp}.csv", index_col=0)
-cols = ccm_long.columns[1:]
+ccm_long = pd.read_csv(f"kedm-ccm-long-{le}-E{e}-tau{tau}-tp{tp}.csv", index_col=0)
+print(ccm_long)
+cols = ccm_long.columns
 
-ndim = int(np.sqrt(ccm_long.shape[1] - 1))
+ndim = int(np.sqrt(ccm_long.shape[1]))
 cm_matrix = np.zeros((len(ccm_long), ndim, ndim))
 print(cm_matrix.shape)
 for i, c in enumerate(cols):
