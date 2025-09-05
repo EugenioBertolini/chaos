@@ -101,7 +101,7 @@ ax[2].set_xticklabels(all_df.columns, fontsize=8)
 ax[2].set_yticklabels(all_df.columns, fontsize=8)
 plt.setp(ax[2].get_xticklabels(), rotation=90, ha="right", rotation_mode="anchor")
 ax[2].set_title("Difference Matrix")
-# fig.colorbar(im2, ax=ax[2])
+fig.colorbar(im2, ax=ax[2])
 
 plt.tight_layout()
 plt.show()

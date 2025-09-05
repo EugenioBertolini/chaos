@@ -99,7 +99,7 @@ def calculate_single_ccm(ch_in, ch_tar, summary_df, data_df, lib_sizes, sample_s
         target=ch_tar,
         E=optimal_e,
         Tp=0,
-        tau=optimal_tau,
+        tau=-optimal_tau,
         libSizes=lib_sizes,
         sample=sample_size,
         seed=42,
@@ -199,5 +199,5 @@ if __name__ == "__main__":
     )[["LibSize"]]
     ccm_long = pd.concat([lib_size_df, ccm_values_df], axis=1)  # pyright: ignore
 
-    ccm_long.to_csv(f"ccm-long-{LE}-optimal-E&tau-parallel.csv")
+    ccm_long.to_csv(f"ccm-long-{LE}-optimal-E&tau-parallel-2.csv")
     print("\n--- All Done! ---")
