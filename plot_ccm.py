@@ -41,7 +41,7 @@ print(f"{vel_df.shape=}")
 print(f"{acc_df.shape=}")
 print(f"{all_df.shape=}")
 
-ccm_long = pd.read_csv("ccm-long-24000-optimal-E&tau-parallel.csv", index_col=0)
+ccm_long = pd.read_csv("ccm-long-24000-optimal-E&tau-parallel-2.csv", index_col=0)
 cols = ccm_long.columns[1:]
 
 ndim = int(np.sqrt(len(cols)))

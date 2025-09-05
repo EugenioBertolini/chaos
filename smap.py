@@ -42,7 +42,7 @@ print(f"{acc_df.shape=}")
 print(f"{all_df.shape=}")
 
 tau = 4
-tp = 6
+tp = 12
 
 lib_start = 1
 lib_end = le // 2
@@ -50,7 +50,7 @@ pred_start = lib_end + 1
 pred_end = le
 
 target_signal = "vel1"
-final_signals_for_smap = ["pos2", "vel0", "vel9"]
+final_signals_for_smap = ["pos0", "vel2", "vel11"]
 
 # # Run S-Map for each identified signal against the target
 # print(
@@ -136,10 +136,12 @@ jacobian_cols = [
 fig, ax = plt.subplots(len(jacobian_cols), 1, figsize=(18, 9))
 for jacobian_col, a in zip(jacobian_cols, ax):
     a.plot(
-        # coeffs["Time"],
+        coeffs["Time"],
         coeffs[jacobian_col],
     )
     a.set_title(f"S-Map Interaction Strength: {jacobian_col}")
     a.set_xlabel("Time Step")
     a.set_ylabel(f"Jacobian: {jacobian_col}")
+
+plt.tight_layout()
 plt.show()
