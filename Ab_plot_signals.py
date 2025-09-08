@@ -47,7 +47,7 @@ def more_plots(all_df, ch):
 
 def simplex_plots(all_df, range_tau, is_save=False):
     for tau in range_tau:
-        fig, ax = plt.subplots(3, 8, figsize=(32, 16))
+        _, ax = plt.subplots(3, 8, figsize=(32, 16))
 
         plot_delay_emb(all_df, "vel1", "vel1", tau, ax[0, 0])  # vel y front left
         plot_delay_emb(all_df, "vel1", "vel0", tau, ax[1, 0])
